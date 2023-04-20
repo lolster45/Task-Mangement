@@ -1,0 +1,78 @@
+.add-column-overlay {
+    display: flex;
+    position: absolute;
+    z-index: 5;
+    top: 0px;
+    bottom: 0px;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.505);
+
+    .add-col-form {
+        display: flex;
+        z-index: 8;
+        flex-direction: column;
+        justify-content: space-evenly;
+        padding: 10px 20px 10px 20px;
+        height: 35vh;
+        width: 300px;
+        color: var(--add-form-input-color);                    
+        background-color: var(--main-task-background-color);
+        label {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            font-size: 1rem;
+            .status-input {
+                margin-top: 10px;
+                height: 30px;
+                width: 100%;
+                border: none;
+                outline: none;
+                padding-left: 10px;
+                color: gray;
+                background-color: var(--add-form-input-bg);
+
+            }
+            .color-input {
+                cursor: pointer;
+                margin-top: 10px;
+                border: none;
+                outline: none;
+                background-color: var(--light-gray);
+            }
+        }
+        .addCol-btn-container {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            width: 100%;
+            button {
+                cursor: pointer;
+                border: none;
+                outline: none;
+                padding: 10px;
+                width: 45%;
+                border-radius: 50px;
+                font-weight: 700;
+            }
+            button:first-of-type {
+                color: var(--light-purple);
+                background-color: white;
+                &:hover {
+                    color: var(--light-purple);
+                    background-color: white;
+                }
+            }
+            button:last-of-type {
+                color: white;
+                background-color: var(--light-purple);
+                &:hover {
+                    color: var(--light-purple);
+                    background-color: white;
+                }
+            }
+        }
+    }
+}

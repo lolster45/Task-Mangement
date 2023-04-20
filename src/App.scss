@@ -1,0 +1,257 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+}
+
+.App {
+  position: relative;
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  font-size: 1rem;
+  color: white;
+  font-family: 'Cabin', sans-serif;
+  font-weight: 500;
+  nav {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    width: 18%;
+    color: gray;
+    background-color: var(--light-gray);
+    &.closed {
+      padding-left: 60px; 
+      width: 3%;
+      overflow: hidden;   
+    }
+    .close-sidebar {
+      cursor: pointer;
+      position: absolute;
+      font-size: 2rem;
+      bottom: 10px;
+      right: 10px;
+      border: none;
+      outline: none;
+      color: var(--main-text-color);
+      background-color: transparent;
+    }
+    h1, h4 {
+      width: 100%;
+      padding: 10px;
+      padding-left: 25px;
+    }
+    h4 {
+      margin-top: 25px;
+      font-size: 0.8rem;
+    }
+    .all-boards {
+      height: 90%;
+      width: 100%;
+      padding-bottom: 70px;
+      margin-top: 10px;
+      overflow-y: scroll;  
+      /* width and height of the scrollbar */
+      &::-webkit-scrollbar {
+        width: 6px;
+      }
+      /* Track */
+      &::-webkit-scrollbar-track {
+        border-radius: 10px;
+        background-color: var(--bg-scrollbar);
+      }      
+      /* Handle */
+      &::-webkit-scrollbar-thumb {
+        background: rgb(119, 118, 118); 
+        border-radius: 10px;
+      }     
+      /* Handle on hover */
+      &::-webkit-scrollbar-thumb:hover {
+        background: rgb(139, 135, 135); 
+      }
+      .single-tab {
+        cursor: pointer;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        padding-left: 25px;
+        height: 50px;
+        width: 95%;
+        border-top-right-radius: 50px;
+        border-bottom-right-radius: 50px;
+        margin-bottom: 10px;        
+        input {
+          border: none;
+          outline: none;
+          height: 30px;
+          padding-left: 5px;
+          color: var(--main-text-color);
+          background-color: var(--dark-gray);
+        }
+        &.active {
+          color: white;
+          background-color: var(--light-purple);
+        }
+        font-size: 1.1rem;
+        svg {
+          margin-right: 5px;
+        }
+        > span {
+          width: 75%;
+          white-space: nowrap;
+          overflow-x: scroll;
+          scrollbar-width: none;
+          -ms-overflow-style: none;
+          &::-webkit-scrollbar {
+            display: none;
+          }
+        }
+      }
+      .add-new-tab {
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 15px;
+        margin-left: 25px;
+        font-weight: 700;
+        height: 30px;
+        border: none;
+        outline: none;
+        font-size: 0.95rem;
+        color: var(--light-purple);
+        background-color: transparent;
+        transition: color 0.05s ease-in;
+        > svg {
+          margin-right: 5px;
+          font-size: 1.2rem;
+        }
+        &:hover {
+          color: white;
+        }
+      }
+    }
+  }
+
+  //The ride side of the sidenav...
+  .task-section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 82%;
+    &.closed {
+      width: 97%;
+      background-color: red;
+    }
+    .add-task-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 25px;
+      height: 10%;
+      font-size: 2rem;
+      color: var(--main-text-color);
+      border-left: 1px solid var(--bg-scrollbar);
+      background-color: var(--light-gray);
+      .add-task-btns {
+        button {
+          cursor: pointer;
+          height: 50px;
+          width: 140px;
+          border-radius: 50px;
+          border: none;
+          outline: none;
+          font-weight: bold;
+          color: white;
+          background-color: var(--light-purple);
+          transition: background-color 0.1s ease-in;
+          &:hover {
+            color: var(--light-purple);
+            background-color: white;
+          }
+        }
+        > span {
+          cursor: pointer;
+          margin-left: 10px;
+          font-size: 1.3rem;
+          color: gray;
+          transition: color 0.1s ease;
+          &:hover {
+            color: white;
+          }
+        }
+      }
+      .selected-task-info {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1rem;
+        border-radius: 50px;
+        height: 40px;
+        width: 200px;
+        transform: translate(-40px);
+        background-color: var(--dark-gray);
+        > button {
+          cursor: pointer;
+          border: none;
+          outline: none;
+          font-size: 1.3rem;
+          margin-left: 10px;
+          color: green;
+          background-color: transparent;
+        }
+        button:last-of-type {
+          color: red;
+        }
+      }
+      .options {
+        position: absolute;
+        top: 80px;
+        right: 30px;
+        height: 0px;
+        overflow: hidden;
+        font-size: 1rem;
+        background-color: var(--light-gray);
+        transition: height 0.13s ease;
+        &.active {
+          z-index: 6;
+          border: 1px solid gray;
+          opacity: 1;       
+          height: 145px;
+        }
+        div {
+          cursor: pointer;
+          display: flex;
+          justify-content: start;
+          align-items: center;
+          padding: 5px;
+          margin-top: 5px;
+          &:hover {
+            background-color: var(--dark-gray);
+          }
+          >svg {
+            margin-right: 5px;
+          }
+          .delete-icon{
+            color: rgb(227, 37, 37);
+          }
+          .rename-icon {
+            color: var(--light-purple)
+          }
+          .lightMode-icon {
+            color: yellow;
+          }
+        }
+      }
+    }
+  }
+}

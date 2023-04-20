@@ -1,0 +1,144 @@
+.task-pop-up-overlay {
+    position: absolute;
+    z-index: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0px;
+    bottom: 0px;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.505);
+    &.active {
+        z-index: 5;
+    }
+
+    .task-pop-up {
+        position: absolute;
+        z-index: 5;
+        padding: 30px;
+        padding-top: 40px;
+        height: 70vh;
+        width: 500px;
+        color: var(--main-text-color);
+        background-color: var(--light-gray);
+        opacity: 0;
+        top: 70px;
+        transition: var(--main-transition);
+        
+        &.active {
+            opacity: 1;
+            z-index: 6;
+            top: 100px;
+        }
+
+        .exit-task-pop-up {
+            cursor: pointer;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.4rem;
+            border: none;
+            outline: none;
+            color: var(--main-text-color);
+            background-color: transparent;
+        }
+
+        h1 {
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+        }
+        .h1-input {
+            border: none;
+            outline: none;
+            margin-top: 9px;
+            margin-bottom: 10px;
+            height: 40px;
+            width: 100%;
+            padding-left: 15px;
+            color: var(--main-text-color);
+            background-color: var(--main-task-background-color);
+        }
+        
+
+        .task-description {
+            position: relative;
+            margin-bottom: 20px;
+            min-height: 100px;
+            font-size: 0.9rem;
+            color: gray;
+           // background-color: red;
+            > button {
+                position: absolute;
+                bottom: 0px;
+                right: 0px;
+            }
+            .description-input{
+                border: none;
+                outline: none;
+                margin-top: 9px;
+                margin-bottom: 10px;
+                height: 100px;
+                width: 100%;
+                padding-left: 15px;
+                resize: none;
+                color: var(--main-text-color);
+                background-color: var(--main-task-background-color);
+            }
+        }
+        
+        .subtask-wrap {
+            margin-top: 13px;
+            margin-bottom: 20px;
+            min-height: 160px;
+            .single-subtask {
+                display: flex;
+                align-items: center;
+                padding: 15px;
+                border-radius: 10px;
+                margin-bottom: 10px;
+                font-size: 0.8rem;
+                color: gray;
+                background-color: var(--main-task-background-color);
+                input[type=checkbox] {
+                    margin-right: 10px;
+                    accent-color: blue;
+                }
+            }
+        }
+
+        .update-btn {
+            cursor: pointer;
+            outline: none;
+            border: none;
+            border-radius: 50px;
+            height: 30px;
+            width: 50px;
+            color: white;
+            background-color: var(--light-purple);
+            transition: all 0.1s ease;
+            &:hover {
+                color: var(--light-purple);
+                background-color: white;
+            }
+        }
+        .confirm-btn {
+            cursor: pointer;
+            border: none;
+            outline: none;
+            font-weight: 700;
+            color: rgb(87, 175, 87);
+            background-color: transparent;
+            transition: color 0.1s ease;
+            &:hover {
+                color: white;
+            }
+          
+        }
+
+        .updt-cnfm-posit {
+            position: absolute;
+            right: 35px;
+            //bottom: 50px;
+        }
+    }
+}

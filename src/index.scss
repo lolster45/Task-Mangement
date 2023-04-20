@@ -1,0 +1,133 @@
+:root {
+  //General color styles...
+  --main-text-color: white;
+  --light-gray: #2C2C38;
+  --dark-gray: #21212D;
+  --light-purple: #645FC5;
+
+  //Styles for kanban main layout...
+  --main-task-background-color: #21212D;
+  --main-task-single-task-bg: #2C2C38;
+  --main-column-hover: #3d3d4a;
+  --main-bg-btn: #272737;
+  --single-task-selected-bg: #3d3d48;
+  --single-task-shadow-color: #21212D;
+
+  //Styles for form...
+  --border-color: #444450;
+
+  //colors for pop-ups...
+  --add-form-input-bg: #2C2C38;
+  --add-column-input-bg: #2C2C38;
+  --add-form-input-color: gray;
+
+  //Main transition...
+  --main-transition: all 0.55s cubic-bezier(0.19, 0.21, 0.48, 1.01);
+
+  //Scrollbar colors...
+  --bg-scrollbar: #2C2C38;
+
+}
+
+.main-layout-container {
+  //position: relative;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  padding: 15px;
+  padding-left: 20px;
+  width: 100%;
+  height: 100%; 
+  height: 90%;
+  overflow-x: scroll;
+  background-color: var(--main-task-background-color);
+
+
+  &::-webkit-scrollbar {
+    height: 10px;
+  }
+  
+  /* Track */
+  &::-webkit-scrollbar-track {
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: var(--light-gray); 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: rgb(91, 89, 89); 
+  }
+
+
+ 
+  > h1 {
+    margin-top: 80px;
+    font-size: 2.5rem;
+    text-align: center;
+    width: 100%;
+    color: gray;
+  }
+
+
+  .columns-wrap {
+    position: relative;
+    display: flex;
+
+   
+  }
+  
+
+    .single-columns {
+      position: relative;
+      margin-top: 10px;
+      margin-right: 40px;
+      min-height: 570px;
+      height: auto;
+      min-width: 280px;
+      max-width: 280px;
+      .kanban-column-title {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+        color: gray;
+        > span {
+          display: block;
+          margin-right: 10px;
+          border-radius: 50%;
+          height: 12px;
+          width: 12px;
+        }
+      }
+      .task-section {
+        margin-top: 25px;
+        //background-color: blueviolet  ;
+      }
+      > div {
+        position: relative;
+        margin-top: 10px;
+        width: 100%;
+        //width: 100%;  
+
+      }
+    }
+    button {
+      cursor: pointer;
+      margin-top: 50px;
+      min-height: 100%;
+      min-width: 280px;
+      border: none;
+      outline: none;
+      font-family: 'Cabin', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: gray;
+      background-color: var(--main-bg-btn);
+    }
+}

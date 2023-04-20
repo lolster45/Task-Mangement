@@ -1,0 +1,40 @@
+.individual-task {
+  position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 25px;
+    min-height: 80px; 
+    height: auto;
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    color: var(--main-text-color);
+    background-color: var(--main-task-single-task-bg); 
+    word-break: break-all;
+    box-shadow: 3px 10px 16px -1px var(--single-task-shadow-color);
+    -webkit-box-shadow: 3px 10px 16px -1px var(--single-task-shadow-color);
+    -moz-box-shadow: 3px 10px 16px -1px var(--single-task-shadow-color);
+    .selected-status-icon {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      bottom: 10px;
+      right: 10px;
+      height: 25px;
+      width: 25px;
+      border-radius: 50%;
+      border: 1px solid gray;
+      overflow: hidden;
+      background-color: rgba(0, 0, 0, 0.219);
+      > svg {
+        font-size: 30px;
+        transform: translateY(0px);
+        color: var(--light-purple);
+      }
+    }
+    &.selected {
+      background-color: var(--single-task-selected-bg); 
+    }
+  }
